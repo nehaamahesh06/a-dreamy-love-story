@@ -4,52 +4,52 @@
 
 @layer base {
   :root {
-    --background: 350 100% 98%;
-    --foreground: 340 30% 15%;
+    --background: 0 0% 6%;
+    --foreground: 10 30% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 340 30% 15%;
+    --card: 0 0% 10%;
+    --card-foreground: 10 30% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 340 30% 15%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 10 30% 95%;
 
-    --primary: 348 83% 58%;
+    --primary: 6 70% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 340 90% 70%;
+    --primary-glow: 8 75% 55%;
 
-    --secondary: 340 60% 95%;
-    --secondary-foreground: 340 40% 25%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 10 30% 92%;
 
-    --muted: 350 50% 96%;
-    --muted-foreground: 340 15% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 10 10% 65%;
 
-    --accent: 330 80% 88%;
-    --accent-foreground: 340 40% 25%;
+    --accent: 6 60% 35%;
+    --accent-foreground: 10 30% 95%;
 
-    --rose: 350 75% 75%;
-    --blush: 345 100% 92%;
-    --deep-rose: 348 70% 45%;
-    --soft-black: 340 20% 12%;
+    --rose: 8 65% 50%;
+    --blush: 6 40% 20%;
+    --deep-rose: 4 75% 40%;
+    --soft-black: 0 0% 4%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 340 40% 90%;
-    --input: 340 40% 90%;
-    --ring: 348 83% 58%;
+    --border: 6 30% 20%;
+    --input: 0 0% 16%;
+    --ring: 6 70% 45%;
 
     --radius: 1.25rem;
 
-    --gradient-romantic: linear-gradient(135deg, hsl(348 83% 65%), hsl(330 80% 75%), hsl(345 100% 88%));
-    --gradient-dream: linear-gradient(180deg, hsl(350 100% 98%), hsl(340 80% 94%));
-    --gradient-glow: radial-gradient(circle at center, hsl(348 90% 70% / 0.4), transparent 70%);
-    --gradient-button: linear-gradient(135deg, hsl(348 83% 58%), hsl(330 80% 65%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(340 60% 97% / 0.7));
+    --gradient-romantic: linear-gradient(135deg, hsl(6 70% 40%), hsl(4 60% 30%), hsl(0 0% 8%));
+    --gradient-dream: linear-gradient(180deg, hsl(0 0% 6%), hsl(6 25% 10%));
+    --gradient-glow: radial-gradient(circle at center, hsl(8 75% 50% / 0.4), transparent 70%);
+    --gradient-button: linear-gradient(135deg, hsl(6 70% 45%), hsl(4 75% 35%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12% / 0.9), hsl(6 30% 14% / 0.7));
 
-    --shadow-soft: 0 10px 40px -10px hsl(348 83% 58% / 0.25);
-    --shadow-glow: 0 0 60px hsl(348 90% 70% / 0.5);
-    --shadow-card: 0 8px 32px -8px hsl(348 50% 50% / 0.15);
-    --shadow-deep: 0 20px 60px -15px hsl(348 70% 45% / 0.4);
+    --shadow-soft: 0 10px 40px -10px hsl(6 70% 45% / 0.35);
+    --shadow-glow: 0 0 60px hsl(8 75% 50% / 0.5);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+    --shadow-deep: 0 20px 60px -15px hsl(4 75% 30% / 0.6);
 
     --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
