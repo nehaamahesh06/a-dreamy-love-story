@@ -18,7 +18,7 @@ export const LearnedSection = () => {
           <h2 className="text-5xl text-gradient md:text-6xl">What I've Learned About You</h2>
           <p className="mx-auto mt-4 flex max-w-xl items-center justify-center gap-2 font-sans text-muted-foreground">
             <Star className="h-4 w-4 fill-primary text-primary" />
-            All the small things I quietly noticed
+            All the small things I noticed
             <Star className="h-4 w-4 fill-primary text-primary" />
           </p>
         </div>
