@@ -4,7 +4,7 @@ const steps = [
   {
     icon: MessageCircle,
     title: "First Talk",
-    text: "It started with a simple hello. I didn't know that one little conversation would slowly become my favourite part of every day.",
+    text: "It started with small glances I could feel…\nthen turned into late story replies and quiet texts on Instagram.\nAnd before I even realised it, that became our first conversation.",
   },
   {
     icon: Smile,
