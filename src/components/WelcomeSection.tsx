@@ -28,7 +28,7 @@ export const WelcomeSection = ({ onStart }: WelcomeSectionProps) => {
         </h2>
 
         <p className="mb-2 font-sans text-lg text-muted-foreground sm:text-xl">
-          A little love letter for my favourite person
+          A more love for my favourite person{"\n"}
         </p>
         <p className="mb-10 font-sans text-3xl font-semibold text-primary sm:text-4xl">
           Nikhil
