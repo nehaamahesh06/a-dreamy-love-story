@@ -3,12 +3,12 @@ import { MessageCircle, Smile, Sparkles, HeartHandshake } from "lucide-react";
 const steps = [
   {
     icon: MessageCircle,
-    title: "First Talk",
+    title: "The Start of Something Beautiful”",
     text: "It started with small glances I could feel…\nthen turned into late story replies and quiet texts on Instagram.\nAnd before I even realised it, that became our first conversation.",
   },
   {
     icon: Smile,
-    title: "First Laugh",
+    title: "In Between Those Days",
     text: "The first time you made me laugh — really laugh — I knew there was something different about you. Something warm. Something safe.",
   },
   {
@@ -52,11 +52,11 @@ export const StorySection = () => {
                   <div className="w-full md:w-1/2 md:px-8">
                     <div className="romantic-card p-6 md:p-8">
                       <div className="mb-3 flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-button text-white shadow-lg">
+                        <div className="h-10 w-10 rounded-full bg-gradient-button text-white shadow-lg flex-col flex items-center justify-center">
                           <Icon className="h-5 w-5" />
                         </div>
                         <span className="font-sans text-xs uppercase tracking-wider text-primary">
-                          Chapter {i + 1}
+                          {""}
                         </span>
                       </div>
                       <h3 className="mb-3 text-3xl text-deep-rose">{step.title}</h3>
