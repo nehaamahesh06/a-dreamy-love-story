@@ -45,9 +45,7 @@ export const StorySection = () => {
               return (
                 <div
                   key={step.title}
-                  className={`relative flex flex-col items-center gap-6 md:flex-row ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className="relative flex-col gap-6 md:flex-row md:flex-row flex items-center justify-start"
                 >
                   <div className="w-full md:w-1/2 md:px-8">
                     <div className="romantic-card p-6 md:p-8">
