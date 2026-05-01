@@ -13,8 +13,8 @@ const steps = [
   },
   {
     icon: Sparkles,
-    title: "First Memory",
-    text: "Then came the little moments — the late night talks, the silly fights, the inside jokes — quietly turning into memories I'd never want to forget.",
+    title: "Where We Became Inseparable",
+    text: "Somewhere between those December classes… we got closer.\nOne class after another, sitting next to each other without even planning it.\nDo you remember those days after class… sitting in the volleyball ground?\nThat’s where, without even realizing it, we slowly found each other.",
   },
   {
     icon: HeartHandshake,
