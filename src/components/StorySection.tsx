@@ -13,8 +13,8 @@ const steps = [
   },
   {
     icon: Sparkles,
-    title: "First Memory",
-    text: "Then came the little moments — the late night talks, the silly fights, the inside jokes — quietly turning into memories I'd never want to forget.",
+    title: "Where We Became Inseparable",
+    text: "Somewhere between those December classes… we got closer.\nOne class after another, sitting next to each other without even planning it.\nDo you remember those days after class… sitting in the volleyball ground?\nThat’s where, without even realizing it, we slowly found each other.",
   },
   {
     icon: HeartHandshake,
@@ -25,7 +25,7 @@ const steps = [
 
 export const StorySection = () => {
   return (
-    <section id="story" className="relative px-6 py-24">
+    <section id="story" className="relative px-6 py-24 text-center">
       <div className="mx-auto max-w-5xl">
         <div className="mb-16 text-center">
           <p className="mb-2 font-sans text-sm uppercase tracking-widest text-primary">our journey</p>
@@ -38,19 +38,17 @@ export const StorySection = () => {
         <div className="relative">
           <div className="absolute left-6 top-0 hidden h-full w-0.5 bg-gradient-to-b from-primary via-rose to-blush md:left-1/2 md:block" />
 
-          <div className="space-y-10">
+          <div className="space-y-10 text-center rounded-md shadow-md">
             {steps.map((step, i) => {
               const Icon = step.icon;
               const isLeft = i % 2 === 0;
               return (
                 <div
                   key={step.title}
-                  className={`relative flex flex-col items-center gap-6 md:flex-row ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className="relative flex-col gap-6 md:flex-row md:flex-row flex items-center justify-start"
                 >
-                  <div className="w-full md:w-1/2 md:px-8">
-                    <div className="romantic-card p-6 md:p-8">
+                  <div className="w-full md:w-1/2 md:px-8 text-center">
+                    <div className="romantic-card p-6 md:p-8 text-center">
                       <div className="mb-3 flex items-center gap-3">
                         <div className="h-10 w-10 rounded-full bg-gradient-button text-white shadow-lg flex-col flex items-center justify-center">
                           <Icon className="h-5 w-5" />
@@ -60,7 +58,7 @@ export const StorySection = () => {
                         </span>
                       </div>
                       <h3 className="mb-3 text-3xl text-deep-rose">{step.title}</h3>
-                      <p className="font-sans leading-relaxed text-foreground/80">{step.text}</p>
+                      <p className="font-sans leading-relaxed text-foreground/80 text-center">{step.text}</p>
                     </div>
                   </div>
 
