@@ -58,7 +58,7 @@ export const StorySection = () => {
                         </span>
                       </div>
                       <h3 className="mb-3 text-3xl text-deep-rose">{step.title}</h3>
-                      <p className="font-sans leading-relaxed text-foreground/80">{step.text}</p>
+                      <p className="font-sans leading-relaxed text-foreground/80 text-center">{step.text}</p>
                     </div>
                   </div>
 
