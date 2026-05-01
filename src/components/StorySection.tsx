@@ -25,11 +25,11 @@ const steps = [
 
 export const StorySection = () => {
   return (
-    <section id="story" className="relative px-6 py-24 text-center">
+    <section id="story" className="relative px-6 py-24 text-justify">
       <div className="mx-auto max-w-5xl">
         <div className="mb-16 text-center">
           <p className="mb-2 font-sans text-sm uppercase tracking-widest text-primary">our journey</p>
-          <h2 className="text-5xl text-gradient md:text-6xl">How I Got to Know You</h2>
+          <h2 className="text-5xl text-gradient md:text-6xl">​I GOT EACH OTHER </h2>
           <p className="mx-auto mt-4 max-w-xl font-sans text-muted-foreground">
             Every "us" has a beginning. Here's ours, in tiny little chapters.
           </p>
