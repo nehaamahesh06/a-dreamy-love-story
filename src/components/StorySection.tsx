@@ -47,8 +47,8 @@ export const StorySection = () => {
                   key={step.title}
                   className="relative flex-col gap-6 md:flex-row md:flex-row flex items-center justify-start"
                 >
-                  <div className="w-full md:w-1/2 md:px-8">
-                    <div className="romantic-card p-6 md:p-8">
+                  <div className="w-full md:w-1/2 md:px-8 text-center">
+                    <div className="romantic-card p-6 md:p-8 text-center">
                       <div className="mb-3 flex items-center gap-3">
                         <div className="h-10 w-10 rounded-full bg-gradient-button text-white shadow-lg flex-col flex items-center justify-center">
                           <Icon className="h-5 w-5" />
