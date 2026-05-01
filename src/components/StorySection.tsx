@@ -18,8 +18,8 @@ const steps = [
   },
   {
     icon: HeartHandshake,
-    title: "Growing Closer",
-    text: "Day by day, you became less of a stranger and more of my person. My calm. My chaos. My favourite hello and hardest goodbye.",
+    title: "​Your best Part",
+    text: "The best part about you is the way you correct me when I’m wrong,\nbut still support me no matter what.\nThe way you take care of me, the way you make me feel special…\nI truly love everything about you.",
   },
 ];
 

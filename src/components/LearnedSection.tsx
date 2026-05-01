@@ -5,7 +5,7 @@ const learnings = [
   { emoji: "🥺", title: "Your soft heart", text: "Underneath all that toughness, you're the gentlest person I know. You care so much, even when you don't say it." },
   { emoji: "😤", title: "Your stubbornness", text: "You'd argue with the sky if it disagreed with you. And honestly? It's kind of cute." },
   { emoji: "🤍", title: "How you love", text: "You love quietly — through actions, through being there, through small things most people would miss. But I see them. All of them." },
-  { emoji: "🌙", title: "Your late-night self", text: "The 2 AM Nikhil is my favourite Nikhil. Honest, soft, a little sleepy, completely yours." },
+  { emoji: "🌙", title: "​Missing at nights", text: "Your possessiveness, your patience, your weird little obsessions., Your cuteness , Your excitement when i do little tgs to u ." },
   { emoji: "✨", title: "What makes you, you", text: "Your humour, your patience, your weird little obsessions. Every piece of you is my favourite piece." },
 ];
 

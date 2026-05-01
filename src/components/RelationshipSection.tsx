@@ -1,7 +1,7 @@
 import { Shield, Coffee, HandHeart, Infinity as InfinityIcon } from "lucide-react";
 
 const pillars = [
-  { icon: Shield, title: "Trust", text: "I trust you with the softest, messiest parts of me — and you've never made me regret it." },
+  { icon: Shield, title: "Trust", text: "I trust you with my real, imperfect self…\nand you’ve never made me regret that." },
   { icon: Coffee, title: "Comfort", text: "With you, even silence feels like home. No need to perform, no need to pretend." },
   { icon: HandHeart, title: "Support", text: "You believe in me on the days I forget how to. You're my biggest cheerleader and my safest place." },
   { icon: InfinityIcon, title: "Love", text: "Not the loud kind. The kind that shows up in small things. Every. Single. Day." },
@@ -19,13 +19,17 @@ export const RelationshipSection = () => {
         </div>
 
         <div className="romantic-card mx-auto mb-12 max-w-3xl p-8 md:p-12">
-          <p className="text-center font-sans text-lg leading-relaxed text-foreground/85 md:text-xl">
-            Through all these moments, I've slowly come to know you… from those small glances to everything we are now.
-            And somewhere along the way, you became my person — my comfort, my safe place, my everything.
-            I never expected something so simple to turn into something so real.
+          <p className="text-center font-sans text-lg leading-relaxed text-foreground/85 md:text-xl whitespace-pre-line">
+            Through all these moments, I’ve slowly come to know you…
+            from those small glances to everything we are now.
+            And somewhere along the way, you became my person —
+            my comfort, my teddy, my Everything.
+            I never expected my dream would turn so real.…
+            It's just a WAOO, moment and a relief felling, which fells dreamy.
             <br />
             <br />
-            <span className="text-deep-rose">But I'm so glad it did… because I found you. I love you 🤍</span>
+            <span className="text-deep-rose">I love you 🤍
+            So much Excitedto be with u. I love you 🤍</span>
           </p>
         </div>
 
