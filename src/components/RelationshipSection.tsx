@@ -20,11 +20,12 @@ export const RelationshipSection = () => {
 
         <div className="romantic-card mx-auto mb-12 max-w-3xl p-8 md:p-12">
           <p className="text-center font-sans text-lg leading-relaxed text-foreground/85 md:text-xl">
-            What we have isn't loud or perfect — it's quietly beautiful. It's late night calls and tired good mornings.
-            It's fighting and forgiving in the same breath. It's choosing each other, again and again, even on the hard days.
+            Through all these moments, I've slowly come to know you… from those small glances to everything we are now.
+            And somewhere along the way, you became my person — my comfort, my safe place, my everything.
+            I never expected something so simple to turn into something so real.
             <br />
             <br />
-            <span className="text-deep-rose">You feel like home, Nikhil. And I'm so grateful you're mine.</span>
+            <span className="text-deep-rose">But I'm so glad it did… because I found you. I love you 🤍</span>
           </p>
         </div>
 
