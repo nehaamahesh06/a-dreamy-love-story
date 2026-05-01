@@ -5,7 +5,7 @@ export const SurpriseSection = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="surprise" className="relative px-6 py-24 text-center">
+    <section id="surprise" className="relative px-6 py-24 text-justify">
       <div className="mx-auto max-w-2xl">
         <p className="mb-2 font-sans text-sm uppercase tracking-widest text-primary">a little something</p>
         <h2 className="mb-6 text-5xl text-gradient md:text-6xl">A Surprise For You</h2>
