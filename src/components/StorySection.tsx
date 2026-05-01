@@ -25,7 +25,7 @@ const steps = [
 
 export const StorySection = () => {
   return (
-    <section id="story" className="relative px-6 py-24">
+    <section id="story" className="relative px-6 py-24 text-center">
       <div className="mx-auto max-w-5xl">
         <div className="mb-16 text-center">
           <p className="mb-2 font-sans text-sm uppercase tracking-widest text-primary">our journey</p>
