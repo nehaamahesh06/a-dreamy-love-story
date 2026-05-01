@@ -38,7 +38,7 @@ export const StorySection = () => {
         <div className="relative">
           <div className="absolute left-6 top-0 hidden h-full w-0.5 bg-gradient-to-b from-primary via-rose to-blush md:left-1/2 md:block" />
 
-          <div className="space-y-10">
+          <div className="space-y-10 text-center rounded-md shadow-md">
             {steps.map((step, i) => {
               const Icon = step.icon;
               const isLeft = i % 2 === 0;
