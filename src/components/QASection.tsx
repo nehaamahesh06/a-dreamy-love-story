@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Heart, Pencil, Plus, Check, X, Trash2 } from "lucide-react";
+import { Heart, Pencil, Plus, Check, X, Trash2, GripVertical } from "lucide-react";
 
 const STORAGE_KEY = "things-i-love-v1";
 
@@ -19,6 +19,18 @@ const defaultThings = [
 export const QASection = () => {
   const [things, setThings] = useState<string[]>(defaultThings);
   const [editing, setEditing] = useState(false);
+  const [dragIndex, setDragIndex] = useState<number | null>(null);
+  const [overIndex, setOverIndex] = useState<number | null>(null);
+
+  const reorder = (from: number, to: number) => {
+    if (from === to) return;
+    setThings((prev) => {
+      const next = [...prev];
+      const [moved] = next.splice(from, 1);
+      next.splice(to, 0, moved);
+      return next;
+    });
+  };
 
   useEffect(() => {
     try {
@@ -75,8 +87,43 @@ export const QASection = () => {
           {things.map((t, i) => (
             <div
               key={i}
-              className="romantic-card group flex items-start gap-4 p-5 transition-all hover:-translate-y-1"
+              draggable={editing}
+              onDragStart={(e) => {
+                if (!editing) return;
+                setDragIndex(i);
+                e.dataTransfer.effectAllowed = "move";
+              }}
+              onDragOver={(e) => {
+                if (!editing || dragIndex === null) return;
+                e.preventDefault();
+                e.dataTransfer.dropEffect = "move";
+                if (overIndex !== i) setOverIndex(i);
+              }}
+              onDragLeave={() => {
+                if (overIndex === i) setOverIndex(null);
+              }}
+              onDrop={(e) => {
+                if (!editing || dragIndex === null) return;
+                e.preventDefault();
+                reorder(dragIndex, i);
+                setDragIndex(null);
+                setOverIndex(null);
+              }}
+              onDragEnd={() => {
+                setDragIndex(null);
+                setOverIndex(null);
+              }}
+              className={`romantic-card group flex items-start gap-4 p-5 transition-all ${
+                editing ? "cursor-move" : "hover:-translate-y-1"
+              } ${dragIndex === i ? "opacity-40" : ""} ${
+                overIndex === i && dragIndex !== i ? "ring-2 ring-primary" : ""
+              }`}
             >
+              {editing && (
+                <div className="flex h-10 flex-shrink-0 items-center text-muted-foreground" aria-label="Drag to reorder">
+                  <GripVertical className="h-5 w-5" />
+                </div>
+              )}
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <span className="font-serif text-lg">{i + 1}</span>
               </div>
