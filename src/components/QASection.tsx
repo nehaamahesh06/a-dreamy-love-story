@@ -2,12 +2,12 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const qa = [
-  { q: "Who fell first? 💘", a: "Okay fine... probably me. But you caught up real quick 😏" },
-  { q: "Who is more dramatic? 🎭", a: "You. 100%. Don't even try to argue 🤭" },
-  { q: "Who texts first? 📱", a: "Me, always. And I'd do it a hundred times over." },
-  { q: "Who is the cuddle bug? 🧸", a: "You pretend it's me, but we both know the truth, Nanna." },
-  { q: "Who is more stubborn? 😤", a: "You. By a loooong margin. (But it's cute.)" },
-  { q: "Who loves who more? ❤️", a: "Trick question. You. Always you. I refuse to lose this one." },
+  { q: "My favourite thing about you? 🤍", a: "The way you look at me like I'm your whole world… because you're mine too." },
+  { q: "What makes me feel safest? 🫂", a: "Your hugs. Your voice. The way you say 'I'm here, Nanna.'" },
+  { q: "The moment I knew it was you? ✨", a: "When being with you started feeling like coming home." },
+  { q: "What I'd never trade about us? 💞", a: "Our late-night talks, our silly fights, and every 'I love you' in between." },
+  { q: "My favourite version of you? 🌙", a: "The sleepy, honest, soft one that's only mine at 2 AM." },
+  { q: "How long will I love you? ♾️", a: "Past forever. And then a little more, just to be sure." },
 ];
 
 export const QASection = () => {
