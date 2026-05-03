@@ -27,7 +27,7 @@ export const FinalSection = () => {
           <Heart className="h-12 w-12 fill-primary text-primary animate-heartbeat" />
         </div>
 
-        <h2 className="mb-8 text-5xl text-gradient md:text-7xl">To my Nikhil,</h2>
+        <h2 className="mb-8 text-5xl text-gradient md:text-7xl">Nikhil,</h2>
 
         <p className="font-sans text-lg leading-relaxed text-foreground/85 md:text-xl">
           Happy birthday, my favourite human. Thank you for existing, for staying, for choosing me on the easy days

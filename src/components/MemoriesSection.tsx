@@ -17,7 +17,7 @@ export const MemoriesSection = () => {
           <p className="mb-2 font-sans text-sm uppercase tracking-widest text-primary">moments forever</p>
           <h2 className="text-5xl text-gradient md:text-6xl">Our Memories</h2>
           <p className="mx-auto mt-4 max-w-xl font-sans text-muted-foreground">
-            A little wall of "us". (Drop in our real photos whenever you can — placeholders for now 🤍)
+            A little wall of "us". (🤍)
           </p>
         </div>
 
