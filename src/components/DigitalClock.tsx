@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const DigitalClock = () => {
-    const [time, setTime] = useState({});
+    const [time, setTime] = useState<{ IST?: string; UTC?: string; PST?: string; EST?: string }>({});
 
     const updateTime = () => {
         const now = new Date();

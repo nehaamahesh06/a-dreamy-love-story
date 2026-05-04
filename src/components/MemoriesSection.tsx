@@ -1,5 +1,6 @@
 import { Camera, Heart, Upload, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const defaultMemories = [
   { caption: "The first time we hung out 🌸", color: "from-rose/40 to-blush" },
@@ -10,52 +11,67 @@ const defaultMemories = [
   { caption: "Just being us 💕", color: "from-blush to-rose/40" },
 ];
 
-const STORAGE_KEY = "memories-gallery-v1";
-
-type MemoryItem = { caption: string; color: string; image?: string };
+type MemoryItem = { caption: string; color: string; image_url?: string | null };
 
 export const MemoriesSection = () => {
   const [items, setItems] = useState<MemoryItem[]>(defaultMemories);
+  const [savingIdx, setSavingIdx] = useState<number | null>(null);
   const fileInputs = useRef<(HTMLInputElement | null)[]>([]);
+  const captionTimers = useRef<Record<number, ReturnType<typeof setTimeout>>>({});
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed: MemoryItem[] = JSON.parse(saved);
-        setItems(defaultMemories.map((d, i) => ({ ...d, ...parsed[i] })));
+    (async () => {
+      const { data } = await supabase.from("memories").select("*");
+      if (data) {
+        const merged = defaultMemories.map((d, i) => {
+          const row = data.find((r: any) => r.id === i);
+          return row ? { ...d, caption: row.caption || d.caption, image_url: row.image_url } : d;
+        });
+        setItems(merged);
       }
-    } catch {}
+    })();
   }, []);
 
-  const persist = (next: MemoryItem[]) => {
+  const saveRow = async (i: number, patch: Partial<MemoryItem>) => {
+    const next = [...items];
+    next[i] = { ...next[i], ...patch };
     setItems(next);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    } catch {}
+    await supabase.from("memories").upsert({
+      id: i,
+      caption: next[i].caption,
+      image_url: next[i].image_url ?? null,
+      updated_at: new Date().toISOString(),
+    });
   };
 
-  const handleFile = (i: number, file: File) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const next = [...items];
-      next[i] = { ...next[i], image: reader.result as string };
-      persist(next);
-    };
-    reader.readAsDataURL(file);
+  const handleFile = async (i: number, file: File) => {
+    setSavingIdx(i);
+    try {
+      const ext = file.name.split(".").pop() || "jpg";
+      const path = `memory-${i}-${Date.now()}.${ext}`;
+      const { error } = await supabase.storage.from("memories").upload(path, file, {
+        upsert: true,
+        contentType: file.type,
+      });
+      if (error) throw error;
+      const { data } = supabase.storage.from("memories").getPublicUrl(path);
+      await saveRow(i, { image_url: data.publicUrl });
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setSavingIdx(null);
+    }
   };
 
   const updateCaption = (i: number, caption: string) => {
     const next = [...items];
     next[i] = { ...next[i], caption };
-    persist(next);
+    setItems(next);
+    if (captionTimers.current[i]) clearTimeout(captionTimers.current[i]);
+    captionTimers.current[i] = setTimeout(() => saveRow(i, { caption }), 500);
   };
 
-  const removeImage = (i: number) => {
-    const next = [...items];
-    next[i] = { ...next[i], image: undefined };
-    persist(next);
-  };
+  const removeImage = (i: number) => saveRow(i, { image_url: null });
 
   return (
     <section id="memories" className="relative px-6 py-24">
@@ -75,9 +91,9 @@ export const MemoriesSection = () => {
                 className={`relative flex aspect-square cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${m.color}`}
                 onClick={() => fileInputs.current[i]?.click()}
               >
-                {m.image ? (
+                {m.image_url ? (
                   <>
-                    <img src={m.image} alt={m.caption} className="h-full w-full object-cover" />
+                    <img src={m.image_url} alt={m.caption} className="h-full w-full object-cover" />
                     <button
                       type="button"
                       onClick={(e) => {
@@ -97,7 +113,7 @@ export const MemoriesSection = () => {
                   <>
                     <Camera className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
                     <div className="absolute bottom-3 flex items-center gap-1 rounded-full bg-background/70 px-3 py-1 text-xs font-medium text-foreground/80">
-                      <Upload className="h-3 w-3" /> Add photo
+                      <Upload className="h-3 w-3" /> {savingIdx === i ? "Uploading..." : "Add photo"}
                     </div>
                   </>
                 )}
@@ -128,7 +144,7 @@ export const MemoriesSection = () => {
         </div>
 
         <p className="mt-8 text-center font-sans text-xs text-muted-foreground">
-          Photos & captions are saved on this device 🤍
+          Photos & captions are saved to your website 🤍
         </p>
       </div>
     </section>
