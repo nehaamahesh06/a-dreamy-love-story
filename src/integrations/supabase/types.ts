@@ -35,6 +35,24 @@ export type Database = {
         }
         Relationships: []
       }
+      surprise: {
+        Row: {
+          id: number
+          updated_at: string
+          video_url: string | null
+        }
+        Insert: {
+          id: number
+          updated_at?: string
+          video_url?: string | null
+        }
+        Update: {
+          id?: number
+          updated_at?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
